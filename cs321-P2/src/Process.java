@@ -1,16 +1,16 @@
 public class Process implements ProcessInterface, Comparable {
 
-        int priLevel;
-        int arrivalTime;
-        int waitTime;
-        int timeRem;
+        private int priLevel;
+        private int arrivalTime;
+        private int waitTime;
+        private int timeRem;
+        private int reqProcTime;
 
-        public Process(int currentTime){
-            //These need to be random
-            priLevel = 0;
-
-            //these are given or 0
+        public Process(int currentTime, int ranPri, int reqProcessingTime){
+            priLevel = ranPri;
+            reqProcTime = reqProcessingTime;
             waitTime = 0;
+            timeRem = reqProcessingTime;
             arrivalTime = currentTime;
         }
     @Override
